@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/main"
+
+# Parse command-line arguments
+command = ARGV[0]
+command_args = ARGV[1..-1]
+
+unless command
+  puts "Usage: cli <command> [args]"
+  exit
+end
+
+# Run the CLI controller
+cli_controller = CliController.new(BatchService.new)
+cli_controller.execute(command, command_args)
