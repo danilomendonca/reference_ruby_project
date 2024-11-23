@@ -2,8 +2,10 @@
 
 require 'zeitwerk'
 
-require 'pry'
-require 'pry-byebug'
+if ENV['DEBUG']
+  require 'pry-byebug'
+  require 'pry'
+end
 
 # Auto load all files in the project lib directory
 loader = Zeitwerk::Loader.new
@@ -15,7 +17,6 @@ loader.push_dir('lib/app/repositories')
 loader.push_dir('lib/app/validators')
 loader.push_dir('lib/domain/entities')
 loader.push_dir('lib/utils')
-loader.inflector.inflect 'cli' => 'CLI'
 loader.setup # ready!
 
 begin
