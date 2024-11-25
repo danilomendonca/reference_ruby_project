@@ -1,0 +1,19 @@
+services:
+  project:
+    platform: linux/amd64
+    build:
+      context: .
+      target: builder
+    environment:
+      DEBUG: ${DEBUG:-false}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      HOME: /project
+    volumes:
+      - bundle_gems:/usr/local/bundle
+      - .:/project:consistent
+    # working_dir: /project
+    tty: true
+    user: 1000:1000
+
+volumes:
+  bundle_gems:
