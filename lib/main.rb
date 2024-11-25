@@ -16,7 +16,7 @@ loader.push_dir('lib/app/services')
 loader.push_dir('lib/app/validators')
 loader.push_dir('lib/domain/entities')
 loader.push_dir('lib/repositories')
-loader.push_dir('lib/utils')
+loader.push_dir('lib/utils/logging')
 loader.setup # ready!
 
 begin
