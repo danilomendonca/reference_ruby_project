@@ -47,4 +47,4 @@ RUN chown -R 1000:1000 /project /usr/local/bundle
 USER 1000:1000
 
 # Default command
-CMD ["sh", "./entrypoint.sh"]
+CMD ["sh", "./docker/entrypoint.sh"]
