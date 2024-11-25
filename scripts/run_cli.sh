@@ -3,7 +3,7 @@
 
 # Check if at least two arguments are passed
 if [ $# -lt 2 ]; then
-  echo "Usage: ./run_cli.sh <command> <arg>"
+  echo "Usage: ./scripts/run_cli.sh <command> <arg>"
   exit 1
 fi
 
