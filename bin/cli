@@ -11,6 +11,4 @@ unless command
   exit
 end
 
-# Run the CLI controller
-cli_controller = CliController.new(BatchService.new)
-cli_controller.execute(command, command_args)
+# TODO: Run the CLI controller
