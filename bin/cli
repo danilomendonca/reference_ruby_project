@@ -11,4 +11,20 @@ unless command
   exit
 end
 
-# TODO: Run the CLI controller
+# TODO: initialize the controller
+
+input_lines = []
+if $stdin.tty? # Check if the input is from an interactive terminal
+  loop do
+    input = gets
+    break if input == 'EOF'
+
+    input = input.chomp
+    break if input == EXIT_COMMAND || input.strip.empty?
+
+    input_lines << input
+  end
+else
+  # Non-interactive input, e.g., file or piped data
+  input_lines = $stdin.read.split("\n")
+end

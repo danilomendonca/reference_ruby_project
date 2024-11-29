@@ -12,4 +12,4 @@ COMMAND=$1
 ARG=$2
 
 # Execute the container command
-docker compose run --rm project bundle exec ruby bin/cli "$COMMAND" "$ARG"
+docker compose run -i -T --rm project bundle exec ruby bin/cli "$COMMAND" "$ARG"
