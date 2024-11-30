@@ -2,4 +2,4 @@
 # Script to build the project container using docker compose
 
 # Execute the container command
-docker compose build project
+docker build  -t project_name .

@@ -11,5 +11,11 @@ fi
 COMMAND=$1
 ARG=$2
 
-# Execute the container command
-docker compose run -i -T --rm project bundle exec ruby bin/cli "$COMMAND" "$ARG"
+# Check if input is coming from a pipe or file
+if [ -t 0 ]; then
+  # Interactive session
+  docker run --rm -it project bundle exec ruby bin/cli "$COMMAND" "$ARG"
+else
+  # Non-interactive session (e.g., input from a file or pipe)
+  docker run --rm -i project bundle exec ruby bin/cli "$COMMAND" "$ARG"
+fi
